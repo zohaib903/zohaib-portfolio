@@ -39,7 +39,7 @@
     <div class="hero-left">
       <p class="hero-eyebrow">Welcome to my portfolio</p>
       <p class="hero-iam">I am a</p>
-      <h1 class="hero-title"><span>Full Stack</span> Developer</h1>
+     <h1 class="hero-title" id="typing-title"><span id="typed-text">Full Stack Developer</span></h1>
       <p class="hero-desc">
         Designing and building reliable, user-focused web applications with a strong emphasis on
         <strong>clean architecture, performance and maintainable code</strong>, turning ideas into
@@ -539,6 +539,48 @@
         a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--orange)' : '';
       });
     });
+       const roles = [
+  "Full Stack Developer",
+  "Laravel Expert",
+  "UI Developer",
+  "PHP Developer",
+   "API Developer",
+  "MySQL Developer",
+  "Backend Developer",
+  "Frontend Developer",
+];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingEl = document.getElementById('typed-text');
+
+function type() {
+  const current = roles[roleIndex];
+
+  if (isDeleting) {
+    typingEl.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingEl.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === current.length) {
+    setTimeout(() => isDeleting = true, 1500);
+  }
+
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }
+
+  const speed = isDeleting ? 60 : 100;
+  setTimeout(type, speed);
+}
+
+type();
+
+     /* for email */
    const FORMSPREE_URL = "https://formspree.io/f/xykqpznz";
 
 function showToast(msg, type = "success") {

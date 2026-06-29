@@ -30,7 +30,7 @@
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 3rem; height: 90px;        /* ← 64px se bara */
+  padding: 0 3rem; height: 90px;        
   background: rgba(13,13,13,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -38,11 +38,11 @@ nav {
 
 .nav-logo {
   display: flex; align-items: center; gap: .7rem;
-  font-size: 1.2rem;            /* ← 1.05rem se bara */
+  font-size: 1.2rem;            
   font-weight: 700; color: var(--white); text-decoration: none;
 }
 .nav-logo-circle {
-  width: 44px; height: 44px;            /* ← bara */
+  width: 44px; height: 44px;           
   border-radius: 50%;
   border: 2px solid var(--orange);
   display: flex; align-items: center; justify-content: center;
@@ -60,7 +60,7 @@ nav {
 }
 
 .nav-links a {
-  color: var(--muted); text-decoration: none; font-size: 1rem;  /* ← .88rem se bara */
+  color: var(--muted); text-decoration: none; font-size: 1rem;  
   font-weight: 500; transition: color .2s, background .2s;
   padding: .5rem 1.7rem;
   border-radius: 999px;
@@ -94,11 +94,11 @@ nav {
 /* Social icons */
 .nav-social { display: flex; gap: .5rem; align-items: center; }
 .nav-social a {
-  width: 42px; height: 42px;    /* ← 38px se bara */
+  width: 42px; height: 42px;   
   border: 1px solid var(--border);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  color: var(--muted); font-size: 1.1rem;  /* ← 1rem se bara */
+  color: var(--muted); font-size: 1.1rem;  
   transition: color .2s, border-color .2s;
   text-decoration: none;
 }
@@ -116,14 +116,14 @@ nav {
     }
     .hero-left { flex: 1; max-width: 600px; }
    .hero-eyebrow {
-  font-size: 1rem;          /* ← .75rem se bara */
+  font-size: 2rem;         
   font-weight: 600;
   letter-spacing: .15em;
   color: var(--orange);
   text-transform: uppercase;
   margin-bottom: .8rem;
 }
-    .hero-iam { font-size: 1.1rem; color: var(--muted); font-weight: 400; margin-bottom: .2rem; }
+    .hero-iam { font-size: 1.8rem; color: var(--muted); font-weight: 400; margin-bottom: .2rem; }
     .hero-title {
       font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.4rem;
       color: var(--white);
@@ -280,8 +280,8 @@ nav {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 2rem 1.2rem;      /* increased height */
-  min-height: 150px;         /* makes cards taller */
+  padding: 2rem 1.2rem;    
+  min-height: 150px;         
   transition: border-color .25s, transform .25s;
 }
 
@@ -298,7 +298,7 @@ nav {
 }
 
 .skill-icon {
-  width: 38px;               /* slightly bigger icon */
+  width: 38px;             
   height: 38px;
   border-radius: 8px;
   display: flex;
@@ -308,7 +308,7 @@ nav {
 }
 
 .skill-name {
-  font-size: .95rem;         /* slightly bigger text */
+  font-size: .95rem;      
   font-weight: 600;
   color: var(--white);
 }
@@ -316,7 +316,7 @@ nav {
 .bar-track {
   background: rgba(255,255,255,.07);
   border-radius: 10px;
-  height: 5px;               /* slightly thicker bar */
+  height: 5px;              
   overflow: hidden;
 }
 
@@ -610,12 +610,12 @@ nav {
   font-weight: 600;
   color: var(--white);
   margin-bottom: .35rem;
-  display: block;  /* ← flex ki jagah block */
+  display: block; 
 }
 .can-item h4 i {
   color: var(--orange);
   font-size: 1.3rem;
-  display: block;       /* ← icon apni line pe */
+  display: block;      
   margin-bottom: .4rem;
 }
 .can-item p { font-size: .77rem; color: var(--muted); line-height: 1.6; }
@@ -719,17 +719,17 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: .2rem;            /* ← .8rem se .2rem — distance kam */
+  padding: .2rem;           
   box-sizing: border-box;
 }
 .cert-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: contain;        /* ← cover ki jagah contain */
+  object-fit: contain;       
   object-position: center;
   display: block;
-  background: var(--card);    /* ← sides pe card background dikhega */
-  padding: .5rem;             /* ← thoda space around image */
+  background: var(--card);    
+  padding: .5rem;            
 }
 .cert-thumb.placeholder {
   display: flex;
@@ -744,11 +744,11 @@ nav {
 
 /* Banner below image */
 .cert-banner {
-  padding: 1rem 3rem;        /* ← height aur width dono zyda */
+  padding: 1rem 3rem;       
   display: flex;
   align-items: center;
   gap: .5rem;
-  font-size: .85rem;         /* ← font bara */
+  font-size: .85rem;      
   font-weight: 700;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -761,19 +761,19 @@ nav {
 
 /* Body below banner */
 .cert-body h4 {
-  font-size: 1.1rem;   /* ← .9rem se bara */
+  font-size: 1.1rem; 
   font-weight: 700;
   color: var(--white);
   margin-bottom: .25rem;
 }
 .cert-body p {
-  font-size: .95rem;   /* ← .78rem se bara */
+  font-size: .95rem;  
   color: var(--muted);
   margin-bottom: .6rem;
 }
 .cert-stars {
   color: var(--orange);
-  font-size: 1rem;     /* ← .75rem se bara */
+  font-size: 1rem;    
   letter-spacing: .1em;
   margin-top: auto;
 }
@@ -787,13 +787,13 @@ nav {
 #contact { background: var(--bg); }
 
 .contact-wrap {
-  max-width: 900px;       /* ← 680px se bara */
+  max-width: 900px;      
   margin: 0 auto;
 }
 
 .contact-sub {
   text-align: center;
-  font-size: 1.3rem;      /* ← bara */
+  font-size: 1.3rem;     
   font-weight: 600;
   color: var(--orange);
   margin-bottom: .4rem;
@@ -801,24 +801,24 @@ nav {
 
 .contact-desc {
   text-align: center;
-  font-size: .95rem;      /* ← bara */
+  font-size: .95rem;     
   color: var(--muted);
   margin-bottom: 2rem;
   line-height: 1.7;
 }
 
-.cform { display: grid; gap: 1.2rem; }  /* ← gap bara */
+.cform { display: grid; gap: 1.2rem; } 
 
 .crow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;            /* ← bara */
+  gap: 1.2rem;           
 }
 
 .cgroup { display: flex; flex-direction: column; gap: .4rem; }
 
 .cgroup label {
-  font-size: .88rem;      /* ← bara */
+  font-size: .88rem;    
   color: var(--muted);
   font-weight: 500;
 }
@@ -827,10 +827,10 @@ nav {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: .9rem 1.2rem;  /* ← zyda padding */
+  padding: .9rem 1.2rem; 
   color: var(--white);
   font-family: 'Poppins', sans-serif;
-  font-size: .95rem;      /* ← bara */
+  font-size: .95rem;     
   outline: none;
   transition: border-color .2s;
 }
@@ -839,18 +839,18 @@ nav {
 .cgroup input::placeholder, .cgroup textarea::placeholder { color: rgba(136,136,136,.4); }
 
 .cgroup textarea {
-  min-height: 160px;      /* ← 110px se bara */
+  min-height: 160px;    
   resize: vertical;
 }
 
 .submit-btn {
   width: 100%;
-  padding: 1rem;          /* ← .8rem se bara */
+  padding: 1rem;          
   background: var(--orange);
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;        /* ← bara */
+  font-size: 1rem;       
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
@@ -863,7 +863,7 @@ nav {
 .contact-footer-email {
   text-align: center;
   margin-top: 1.2rem;
-  font-size: .88rem;      /* ← bara */
+  font-size: .88rem;     
   color: var(--muted);
 }
 
@@ -962,7 +962,7 @@ footer {
   transform: translateY(-3px);
 }
 
-/* COPYRIGHT (optional agar add karo) */
+/* COPYRIGHT  */
 .footer-bottom {
   width: 100%;
   text-align: center;
