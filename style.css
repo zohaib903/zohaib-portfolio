@@ -125,12 +125,12 @@ nav {
 }
     .hero-iam { font-size: 1.8rem; color: var(--muted); font-weight: 400; margin-bottom: .2rem; }
     .hero-title {
-      font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.4rem;
+      font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.4rem;
       color: var(--white);
     }
     .hero-title span { color: var(--orange); }
     .hero-desc {
-      font-size: .88rem; line-height: 1.85; color: var(--muted); margin-bottom: .8rem;
+      font-size: .98rem; line-height: 1.85; color: var(--muted); margin-bottom: .8rem;
     }
     .hero-desc strong { color: var(--text); font-weight: 600; }
     .hero-tagline {
