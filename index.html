@@ -37,8 +37,7 @@
   <!-- ── HERO ── -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow"><span style="color: #ffffff;">Welcome to</span style="color: var(--orange);"> <span>my
-          portfolio</span></p>
+     <p class="hero-eyebrow"><span style="color: #ffffff;">Welcome to</span> <span  style="color: var(--orange);" >my portfolio</span></p>
       <p class="hero-iam">I am a</p>
       <h1 class="hero-title"><span id="typed-orange"></span><span id="typed-white"></span></h1>
       <p class="hero-desc">
@@ -546,48 +545,49 @@
         a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--orange)' : '';
       });
     });
-    const roles = [
-      { orange: "Full Stack", white: " Developer" },
-      { orange: "Laravel", white: " Expert" },
-      { orange: "UI", white: " Developer" },
-      { orange: "PHP", white: " Developer" },
-      { orange: "API", white: " Developer" },
-      { orange: "MySQL", white: " Developer" },
-      { orange: "Backend", white: " Developer" },
-      { orange: "Frontend", white: " Developer" },
-    ];
+ /* Typing animation */
+const orangeEl = document.getElementById('typed-orange');
+const whiteEl  = document.getElementById('typed-white');
 
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+const roles = [
+  { orange: "Full Stack",  white: " Developer" },
+  { orange: "Laravel",     white: " Expert" },
+  { orange: "UI",          white: " Developer" },
+  { orange: "PHP",         white: " Developer" },
+  { orange: "API",         white: " Developer" },
+  { orange: "MySQL",       white: " Developer" },
+  { orange: "Backend",     white: " Developer" },
+  { orange: "Frontend",    white: " Developer" },
+];
 
-    const orangeEl = document.getElementById('typed-orange');
-    const whiteEl = document.getElementById('typed-white');
+let roleIndex  = 0;
+let charIndex  = 0;
+let isDeleting = false;
 
-    function type() {
-      const cur = roles[roleIndex];
-      const fullText = cur.orange + cur.white;
+function type() {
+  const cur      = roles[roleIndex];
+  const fullText = cur.orange + cur.white;
 
-      if (isDeleting) { charIndex--; } else { charIndex++; }
+  if (isDeleting) { charIndex--; } else { charIndex++; }
 
-      const visible = fullText.substring(0, charIndex);
-      const oLen = cur.orange.length;
+  const visible = fullText.substring(0, charIndex);
+  const oLen    = cur.orange.length;
 
-      orangeEl.textContent = visible.substring(0, Math.min(visible.length, oLen));
-      whiteEl.textContent = visible.length > oLen ? visible.substring(oLen) : "";
+  orangeEl.textContent = visible.substring(0, Math.min(visible.length, oLen));
+  whiteEl.textContent  = visible.length > oLen ? visible.substring(oLen) : "";
 
-      if (!isDeleting && charIndex === fullText.length) {
-        setTimeout(() => isDeleting = true, 1500);
-      }
-      if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
+  if (!isDeleting && charIndex === fullText.length) {
+    setTimeout(() => isDeleting = true, 1500);
+  }
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex  = (roleIndex + 1) % roles.length;
+  }
 
-      setTimeout(type, isDeleting ? 60 : 100);
-    }
+  setTimeout(type, isDeleting ? 60 : 100);
+}
 
-    type();
+setTimeout(type, 500);
     /* for email */
     const FORMSPREE_URL = "https://formspree.io/f/xykqpznz";
 
