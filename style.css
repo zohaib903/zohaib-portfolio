@@ -989,6 +989,8 @@ footer {
   color: var(--muted);
   margin-top: .1rem;
 }
+#typed-orange { color: var(--orange); }
+#typed-white  { color: #ffffff; }
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   footer {
