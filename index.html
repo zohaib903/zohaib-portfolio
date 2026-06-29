@@ -37,9 +37,10 @@
   <!-- ── HERO ── -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Welcome to my portfolio</p>
+      <p class="hero-eyebrow"><span style="color: var(--orange);">Welcome to</span> <span style="color: #ffffff;">my
+          portfolio</span></p>
       <p class="hero-iam">I am a</p>
-    <h1 class="hero-title"><span id="typed-orange"></span><span id="typed-white"></span></h1>
+      <h1 class="hero-title"><span id="typed-orange"></span><span id="typed-white"></span></h1>
       <p class="hero-desc">
         Designing and building reliable, user-focused web applications with a strong emphasis on
         <strong>clean architecture, performance and maintainable code</strong>, turning ideas into
@@ -453,13 +454,18 @@
 
       <form class="cform" onsubmit="return false;">
         <div class="crow">
-          <div class="cgroup"><label>Name</label><input type="text" id="name" placeholder="Your Name" /></div>          <!-- ← id="name" add hua -->
-          <div class="cgroup"><label>Email</label><input type="email" id="email" placeholder="your@email.com" /></div>  <!-- ← id="email" add hua -->
+          <div class="cgroup"><label>Name</label><input type="text" id="name" placeholder="Your Name" /></div>
+          <!-- ← id="name" add hua -->
+          <div class="cgroup"><label>Email</label><input type="email" id="email" placeholder="your@email.com" /></div>
+          <!-- ← id="email" add hua -->
         </div>
-        <div class="cgroup"><label>Subject</label><input type="text" id="subject" placeholder="Project Idea / Collaboration" /></div>  <!-- ← id="subject" add hua -->
-        <div class="cgroup"><label>Message</label><textarea id="message" placeholder="Tell me about your project..."></textarea>        <!-- ← id="message" add hua -->
+        <div class="cgroup"><label>Subject</label><input type="text" id="subject"
+            placeholder="Project Idea / Collaboration" /></div> <!-- ← id="subject" add hua -->
+        <div class="cgroup"><label>Message</label><textarea id="message"
+            placeholder="Tell me about your project..."></textarea> <!-- ← id="message" add hua -->
         </div>
-        <button type="submit" id="sendBtn" class="submit-btn" onclick="sendMessage()">Send Message</button>  <!-- ← id="sendBtn" aur onclick add hua -->
+        <button type="submit" id="sendBtn" class="submit-btn" onclick="sendMessage()">Send Message</button>
+        <!-- ← id="sendBtn" aur onclick add hua -->
       </form>
 
       <p class="contact-footer-email">
@@ -467,7 +473,7 @@
       </p>
     </div>
 
-    <div class="toast" id="toast"></div>  <!-- ← yeh nai line add hui -->
+    <div class="toast" id="toast"></div> <!-- ← yeh nai line add hui -->
 
   </section>
 
@@ -539,95 +545,95 @@
         a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--orange)' : '';
       });
     });
-   const roles = [
-  { orange: "Full Stack",  white: " Developer" },
-  { orange: "Laravel",     white: " Expert" },
-  { orange: "UI",          white: " Developer" },
-  { orange: "PHP",         white: " Developer" },
-  { orange: "API",         white: " Developer" },
-  { orange: "MySQL",       white: " Developer" },
-  { orange: "Backend",     white: " Developer" },
-  { orange: "Frontend",    white: " Developer" },
-];
+    const roles = [
+      { orange: "Full Stack", white: " Developer" },
+      { orange: "Laravel", white: " Expert" },
+      { orange: "UI", white: " Developer" },
+      { orange: "PHP", white: " Developer" },
+      { orange: "API", white: " Developer" },
+      { orange: "MySQL", white: " Developer" },
+      { orange: "Backend", white: " Developer" },
+      { orange: "Frontend", white: " Developer" },
+    ];
 
-let roleIndex = 0;
-let charIndex  = 0;
-let isDeleting = false;
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-const orangeEl = document.getElementById('typed-orange');
-const whiteEl  = document.getElementById('typed-white');
+    const orangeEl = document.getElementById('typed-orange');
+    const whiteEl = document.getElementById('typed-white');
 
-function type() {
-  const cur      = roles[roleIndex];
-  const fullText = cur.orange + cur.white;
+    function type() {
+      const cur = roles[roleIndex];
+      const fullText = cur.orange + cur.white;
 
-  if (isDeleting) { charIndex--; } else { charIndex++; }
+      if (isDeleting) { charIndex--; } else { charIndex++; }
 
-  const visible   = fullText.substring(0, charIndex);
-  const oLen      = cur.orange.length;
+      const visible = fullText.substring(0, charIndex);
+      const oLen = cur.orange.length;
 
-  orangeEl.textContent = visible.substring(0, Math.min(visible.length, oLen));
-  whiteEl.textContent  = visible.length > oLen ? visible.substring(oLen) : "";
+      orangeEl.textContent = visible.substring(0, Math.min(visible.length, oLen));
+      whiteEl.textContent = visible.length > oLen ? visible.substring(oLen) : "";
 
-  if (!isDeleting && charIndex === fullText.length) {
-    setTimeout(() => isDeleting = true, 1500);
-  }
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    roleIndex  = (roleIndex + 1) % roles.length;
-  }
+      if (!isDeleting && charIndex === fullText.length) {
+        setTimeout(() => isDeleting = true, 1500);
+      }
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
 
-  setTimeout(type, isDeleting ? 60 : 100);
-}
-
-type();
-     /* for email */
-   const FORMSPREE_URL = "https://formspree.io/f/xykqpznz";
-
-function showToast(msg, type = "success") {
-  const toast = document.getElementById("toast");
-  toast.textContent = msg;
-  toast.className = `toast show ${type}`;
-  setTimeout(() => toast.className = "toast", 4000);
-}
-
-function sendMessage() {
-  const name    = document.getElementById("name").value.trim();
-  const email   = document.getElementById("email").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const btn     = document.getElementById("sendBtn");
-
-  if (!name || !email || !subject || !message) {
-    showToast("⚠️ Please fill in all fields.", "error");
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = "Sending...";
-
-  fetch(FORMSPREE_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, subject, message })
-  })
-  .then(res => {
-    if (res.ok) {
-      showToast("✅ Your message has been sent successfully. Thank you for reaching out—I’ll respond as soon as possible.");
-      document.getElementById("name").value    = "";
-      document.getElementById("email").value   = "";
-      document.getElementById("subject").value = "";
-      document.getElementById("message").value = "";
-    } else {
-      showToast("❌ Something went wrong. Try again.", "error");
+      setTimeout(type, isDeleting ? 60 : 100);
     }
-  })
-  .catch(() => showToast("❌ Network error. Try again.", "error"))
-  .finally(() => {
-    btn.disabled = false;
-    btn.textContent = "Send Message";
-  });
-}
+
+    type();
+    /* for email */
+    const FORMSPREE_URL = "https://formspree.io/f/xykqpznz";
+
+    function showToast(msg, type = "success") {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.className = `toast show ${type}`;
+      setTimeout(() => toast.className = "toast", 4000);
+    }
+
+    function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const btn = document.getElementById("sendBtn");
+
+      if (!name || !email || !subject || !message) {
+        showToast("⚠️ Please fill in all fields.", "error");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message })
+      })
+        .then(res => {
+          if (res.ok) {
+            showToast("✅ Your message has been sent successfully. Thank you for reaching out—I’ll respond as soon as possible.");
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+          } else {
+            showToast("❌ Something went wrong. Try again.", "error");
+          }
+        })
+        .catch(() => showToast("❌ Network error. Try again.", "error"))
+        .finally(() => {
+          btn.disabled = false;
+          btn.textContent = "Send Message";
+        });
+    }
   </script>
 </body>
 
