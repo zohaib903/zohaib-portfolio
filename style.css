@@ -166,6 +166,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+   
+}
+/* Sirf mobile screens ke liye */
+@media (max-width: 768px) {
+    .avatar-wrap{
+        transform: translateX(-190px);
+    }
 }
 
 /* Outer Ring */
@@ -992,7 +999,10 @@ footer {
   color: var(--muted);
   margin-top: .1rem;
 }
-#typed-orange { color: var(--orange); }
+#typed-orange { color: var(--orange);
+
+    margin-right: 0.3em;
+}
 #typed-white  { color: #ffffff; }
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
